@@ -1,0 +1,10 @@
+process: tgid=2135, cmd=ls
+thread: tgid=2135, pid=2135
+xpage: tgid=2135, base=400000, size=1e000
+xpage: tgid=2135, base=7f726a758000, size=26000
+xpage: tgid=2135, base=7fff6c28a000, size=2000
+xpage: tgid=2135, base=7f726a536000, size=222000
+xpage: tgid=2135, base=7f726a16c000, size=3ca000
+xpage: tgid=2135, base=7f7269efc000, size=270000
+xpage: tgid=2135, base=7f7269cf8000, size=204000
+xpage: tgid=2135, base=7f7269adb000, size=21d000

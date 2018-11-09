@@ -14,7 +14,7 @@
 #include <distorm/mnemonics.h>
 #include <linux/pt.h>
 
-//#define DEBUG
+#define DEBUG
 
 #define UNHANDLED(condition) BUG_ON(condition)
 #define pt_alert(fmt, ...) printk(KERN_EMERG "pt: " fmt, ## __VA_ARGS__)
@@ -445,7 +445,7 @@ static int _PT_TRACE_PROC_END_WIDTH = 1;
 
 // For dumping traces on address triggers
 static int pt_address_count = 0;
-static u64 pt_addresses[10] = {0,0,0,0,0,0,0,0,0,0};
+static u64 pt_addresses[100] = {0};
 static char pt_addresses_string[PATH_MAX];
 
 #define pt_trace_on_addr(curr_addr) do { \
@@ -494,7 +494,7 @@ static ssize_t
 pt_trace_address_write(struct file *filp, const char __user *buf,
 		size_t count, loff_t *ppos)
 {
-	int max_addresses = 10, address_size = 16; // 10 address triggers, 64-bit address space
+	int max_addresses = 100, address_size = 16; // 10 address triggers, 64-bit address space
 	char addresses[address_size * max_addresses];
 	char address[address_size + 1]; // requires a null terminator
 	int res = 0;
@@ -2094,7 +2094,7 @@ static void pt_work(struct work_struct *work)
 		// Unset the trigger
 		pt_trace_addr_trigger = false;
 
-		//ring_buffer->print_buffer(_PT_TRACE_ADDR_WIDTH);
+		ring_buffer->print_buffer(_PT_TRACE_ADDR_WIDTH);
 	}
 }
 

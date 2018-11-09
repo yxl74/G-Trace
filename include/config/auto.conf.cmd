@@ -965,7 +965,7 @@ deps_config := \
 include/config/auto.conf: \
 	$(deps_config)
 
-ifneq "$(KERNELVERSION)" "4.2.01"
+ifneq "$(KERNELVERSION)" "4.2.02"
 include/config/auto.conf: FORCE
 endif
 ifneq "$(ARCH)" "x86"

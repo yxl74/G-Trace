@@ -1,1 +1,1 @@
-#define UTS_RELEASE "4.2.01+"
+#define UTS_RELEASE "4.2.02+"
